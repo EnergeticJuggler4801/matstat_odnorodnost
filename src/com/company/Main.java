@@ -3,8 +3,6 @@ package com.company;
 
 import java.util.Scanner;
 import java.io.*;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.math.*;
 
 public class Main {
