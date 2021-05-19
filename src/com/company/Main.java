@@ -15,6 +15,7 @@ public class Main {
             a[i] = in.nextDouble();
         }
     }
+
     public static void print(double[] a) {
         for (int i = 0; i < 25; i++) {
             if (i % 5 == 0 && i != 0) {
@@ -23,15 +24,17 @@ public class Main {
             System.out.print(a[i] + " ");
         }
     }
+
     public static double sum(double[] a) {
-        double sum=0;
+        double sum = 0;
         for (int i = 0; i < 25; i++) {
             sum = sum + a[i];
         }
         return sum;
     }
+
     public static double sumSquare(double[] a) {
-        double sumSquare=0;
+        double sumSquare = 0;
         for (int i = 0; i < 25; i++) {
             sumSquare = sumSquare + a[i] * a[i];
         }
@@ -86,22 +89,23 @@ public class Main {
         System.out.println("ro_f = " + ro);
         if (ro < alpha) {
             System.out.println("H0!");
+            if (average1 > average2) {
+                ro = ((average1 - average2) / Math.sqrt(24 * fixed1 + 24 * fixed2)) * Math.sqrt(25 * 25 * 48 / 50);
+            } else {
+                ro = ((average2 - average1) / Math.sqrt(24 * fixed1 + 24 * fixed2)) * Math.sqrt(25 * 25 * 48 / 50);
+            }
+            System.out.println("Enter alpha: ");
+            alpha = in.nextDouble();
+            System.out.println("ro_t = " + ro);
+            if (ro < alpha) {
+                System.out.println("H0!");
+            } else {
+                System.out.println("H1!");
+            }
         } else {
             System.out.println("H1!");
         }
-        if (average1 > average2) {
-            ro = ((average1 - average2) / Math.sqrt(24 * fixed1 + 24 * fixed2)) * Math.sqrt(25 * 25 * 48 / 50);
-        } else {
-            ro = ((average2 - average1) / Math.sqrt(24 * fixed1 + 24 * fixed2)) * Math.sqrt(25 * 25 * 48 / 50);
-        }
-        System.out.println("Enter alpha: ");
-        alpha = in.nextDouble();
-        System.out.println("ro_t = " + ro);
-        if (ro < alpha) {
-            System.out.println("H0!");
-        } else {
-            System.out.println("H1!");
-        }
+
     }
 }
 
